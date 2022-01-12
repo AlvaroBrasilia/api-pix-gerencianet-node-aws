@@ -24,11 +24,25 @@ app.get("/", async (req, res) => {
     calendario: {
       expiracao: 3600,
     },
+    devedor: {
+      cpf: "98034391115",
+      nome: "Alvaro Luiz Andrade",
+    },
     valor: {
       original: "0.10",
     },
     chave: "pixgn@alvaroandrade.dev",
-    solicitacaoPagador: "Cobrança dos serviços prestados.",
+    solicitacaoPagador: "Insira codigo do sorteio e numero(s) selecionado(s).",
+    infoAdicionais: [
+      {
+        nome: "Sorteio",
+        valor: "18° RIFINHA VALENDO NUMEROS DA FEDERAL",
+      },
+      {
+        nome: "Numero(s)",
+        valor: "10 - 11 - 12",
+      },
+    ],
   };
 
   const cobResponse = await reqGN.post("/v2/cob", dataCob);
